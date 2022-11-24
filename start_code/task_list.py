@@ -20,9 +20,9 @@ def print_descriptions(task_list):
     for task in task_list:
         print(task['description']) 
 
-def time_taken(task_list):
+def time_taken(time,task_list):
     for task in task_list:
-        if task['time_taken']>10 and task['completed']==True:
+        if task['time_taken']>time and task['completed']==True:
             print(task['description'])
 
 def find_description(task_list):
@@ -48,7 +48,7 @@ print('Task descriptions:\n')
 desc=print_descriptions(tasks)
 print(' ')
 print('Task completed within 10 minutes:\n')
-time_taken(tasks)
+time_taken(10,tasks)
 print(' ')
 print('Find task by description:\n')
 find_description(tasks)
@@ -112,7 +112,7 @@ def menu(tasks):
         elif user_input=="4":
             mark_complete(tasks)
         elif user_input=="5":
-            time_taken(tasks)
+            time_taken(10,tasks)
         elif user_input=="6":
             find_description(tasks)
         elif user_input=="7":
