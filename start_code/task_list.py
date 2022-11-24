@@ -97,9 +97,11 @@ def menu(tasks):
     print("M or m: Display this menu")
     print("Q or q: Quit")
     user_input=''
+    choice=1
 
-    while user_input=='':
-        user_input=input('Select an item on the menu(ie. "1")')
+    while choice==1:
+        print('')
+        user_input=input('Select an item on the menu(ie. "1")\n')
 
         if user_input=="1":
             print_descriptions(tasks)
@@ -116,9 +118,13 @@ def menu(tasks):
         elif user_input=="7":
             add_tasks(tasks)
         elif user_input=="M" or user_input=="m":
+            choice=0
             menu(tasks)
         elif user_input=="Q" or user_input=="q":
+            choice=0
             break
+        else:
+            print('That was not an option on the menu, please try again')
             
 menu(tasks)
 
